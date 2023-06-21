@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <th:block th:replace="fragments :: head"></th:block>
+  <title>Students</title>
+</head>
+<body>
+  <nav th:replace="fragments :: navbar"></nav>
+  <main class="container">
+    <h1>Students</h1>
+    <img th:src="@{/logo.jpg}" alt="app-logo" id="logo">
+    <p th:text="${students}"></p>
+    <h2>Students List</h2>
+    <!-- la ArrayList di students si trova nell'attributo studentList -->
+    <ul>
+      <!-- per ogni studente mostro il nome e un link alla pagina di dettaglio -->
+      <li th:each="student : ${studentList}">
+        <a th:href="@{|/students/${student.id}|}" th:text="${student.name}"></a>
+      </li>
+    </ul>
+  </main>
+  <footer class="text-center">Footer</footer>
+</body>
+</html>

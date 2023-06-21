@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <th:block th:replace="fragments :: head"></th:block>
+  <title>Student detail</title>
+</head>
+<body>
+  <nav th:replace="fragments :: navbar"></nav>
+  <h1 th:text="${student.name}"></h1>
+  <!-- div mappato sull'oggetto student -->
+  <div th:object="${student}">
+    <p th:text="|Name: *{name}|"></p>
+    <p th:text="|Email: *{email}|"></p>
+  </div>
+
+</body>
+</html>

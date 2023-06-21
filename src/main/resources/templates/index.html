@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <th:block th:replace="fragments :: head"></th:block>
+  <title>Title</title>
+</head>
+<body>
+  <nav th:replace="fragments :: navbar"></nav>
+  <h1>My first template</h1>
+  <p>This is a Thymeleaf template</p>
+  <p th:text="${currentDateTime}"></p>
+</body>
+</html>
